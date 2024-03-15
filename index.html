@@ -1,10 +1,5 @@
 
 <script>
-  if(location.href.includes("#tgWeb")){
-    alert("1")
-    setTimeout(()=>{location.href = location.href.split("https://sashkinyt.github.io/redirector/?v=")[1].split("#tgWeb")[0]},1000)
-  } else{
-    alert("2")
-    setTimeout(()=>{location.href = location.href.split("https://sashkinyt.github.io/redirector/?v=")[1]},1000)
-  }
+  if (typeof screen.orientation !== 'undefined') {document.getElementById("mobile").hidden=false}
+  else{setTimeout(()=>{location.href = location.href.split("https://sashkinyt.github.io/redirector/?v=")[1]},1000)}
 </script>
