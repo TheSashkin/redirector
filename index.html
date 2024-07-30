@@ -1,22 +1,6 @@
 <body style="background-color: rgb(36,36,36)">
   <h1 id="mobile" style="color: white;" hidden>Не работает на телефонах, зайдите пожалуйста с ПК</h1>
   <script>
-    function detectMob() {
-      const toMatch = [
-          /Android/i,
-          /webOS/i,
-          /iPhone/i,
-          /iPad/i,
-          /iPod/i,
-          /BlackBerry/i,
-          /Windows Phone/i
-      ];
-      
-      return toMatch.some((toMatchItem) => {
-          return navigator.userAgent.match(toMatchItem);
-      });
-    }    
-    if(detectMob()){document.getElementById("mobile").hidden=false}
-    else{location.href = location.href.split("https://sashkinyt.github.io/redirector/?v=")[1]}
+    location.href = location.href.split("https://sashkinyt.github.io/redirector/?v=")[1]
   </script>
 </body>
