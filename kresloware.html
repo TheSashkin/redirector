@@ -1,69 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KresloWare</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <style>
-      
-      *{
-        margin: 0px;
-        padding: 0px
-      }
-      body{
-        background-color: rgb(24,24,24);
-      }
-      #container{
-        width: 500px;
-        height: 200px;
-        background-color: rgb(36,36,36);
-        position: absolute;
-        left: calc(50vw - 250px);
-        top: calc(50vh - 100px);
-        border-radius: 10px;
-      }
-      #telegram{
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        border-radius: 5px;
-        left: 100px;
-        top: 70px;
-      }
-      #discord{
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        border-radius: 5px;
-        right: 100px;
-        top: 70px;
-      }
-      #title{
-        font-family: Montserrat;
-        font-size: 48px;
-        width: 100%;
-        text-align: center;
-        color: white;
-        position: absolute;
-        top: 5px;
-      }
-      a{
-        font-family: Montserrat;
-        color: white;
-      }
-    </style>
-</head>
-<body>
-    <a href="https://discord.gg/kynSQK2EpX">NextStudio DS</a>
-    <a href="https://t.me/nextstudio_1">NextStudio TG</a>
-    <a href="https://youtube.com/@TheSashkin">TheSashkin YT</a>
-    <div id="container">
-      <h1 id="title">KRESLOWARE</h1>
-      <a href="https://discord.gg/kf95BauDzG" target="_blank"><img src="discord.jpg" id="discord"></a>
-      <a href="https://t.me/kresloware" target="_blank"><img src="telegram.png" id="telegram"></a>
-    </div>
-</body>
-</html>
+<script>
+        const links = [
+    { url: 'https://t.me/kresloware', weight: 0.125 },
+    { url: 'https://discord.gg/kf95BauDzG', weight: 0.125 },
+    { url: 'https://youtube.com/@TheSashkin', weight: 0.5 },
+    { url: 'https://t.me/nextstudio_1', weight: 0.125 },
+    { url: 'https://discord.gg/kynSQK2EpX', weight: 0.125 }
+];
+
+const weightedLinks = links.flatMap(link => Array(Math.round(link.weight * 100)).fill(link.url));
+
+const randomUrl = weightedLinks[Math.floor(Math.random() * weightedLinks.length)];
+location.href = randomUrl;
+
+</script>
