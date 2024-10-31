@@ -1,3 +1,13 @@
 <script>
-  location.href = "kresloware.html"
+        const links = [
+    { url: 'https://youtube.com/@TheSashkin', weight: 0.5 },
+    { url: 'https://t.me/nextstudio_1', weight: 0.25 },
+    { url: 'https://discord.gg/kynSQK2EpX', weight: 0.25 }
+];
+
+const weightedLinks = links.flatMap(link => Array(Math.round(link.weight * 100)).fill(link.url));
+
+const randomUrl = weightedLinks[Math.floor(Math.random() * weightedLinks.length)];
+location.href = randomUrl;
+alert("Тут есть система рандома(3 ссылки), попробуй выбить остальные")
 </script>
