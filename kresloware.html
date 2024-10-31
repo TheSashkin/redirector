@@ -1,10 +1,8 @@
 <script>
         const links = [
-    { url: 'https://t.me/kresloware', weight: 0.125 },
-    { url: 'https://discord.gg/kf95BauDzG', weight: 0.125 },
     { url: 'https://youtube.com/@TheSashkin', weight: 0.5 },
-    { url: 'https://t.me/nextstudio_1', weight: 0.125 },
-    { url: 'https://discord.gg/kynSQK2EpX', weight: 0.125 }
+    { url: 'https://t.me/nextstudio_1', weight: 0.25 },
+    { url: 'https://discord.gg/kynSQK2EpX', weight: 0.25 }
 ];
 
 const weightedLinks = links.flatMap(link => Array(Math.round(link.weight * 100)).fill(link.url));
