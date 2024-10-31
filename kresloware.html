@@ -11,5 +11,5 @@ const weightedLinks = links.flatMap(link => Array(Math.round(link.weight * 100))
 
 const randomUrl = weightedLinks[Math.floor(Math.random() * weightedLinks.length)];
 location.href = randomUrl;
-
+alert("Тут есть система рандома(5 ссылок), попробуй выбить остальные")
 </script>
