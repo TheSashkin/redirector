@@ -85,6 +85,7 @@
             font-size: 24px;
             cursor: pointer;
             background-color: rgb(231, 231, 231);
+            color: black;
             border: 0px solid;
             border-radius: 5px;
             transition: .2s;
@@ -118,32 +119,26 @@
     <div class="card">
         <h2 class="title">404TEAM <p>redirector</p></h2>
         <div class="buttons">
-            <a href="https://t.me/NotFoundTeams"><button>NotAFrizik Telegram</button></a>
-            <a href="https://t.me/TheSashk1n"><button>TheSashkin Telegram</button></a>
-            <a href="https://www.youtube.com/@NotAFrizik"><button>NotAFrizik YouTube</button></a>
-            <a href="https://www.youtube.com/@TheSashkin"><button>TheSashkin YouTube</button></a>
-            <a href="https://www.youtube.com/@alexmotu_"><button>alexmotu YouTube</button></a>
+            <a data-random href="https://t.me/NotFoundTeams"><button>NotAFrizik Telegram</button></a>
+            <a data-random href="https://t.me/TheSashk1n"><button>TheSashkin Telegram</button></a>
+            <a data-random href="https://www.youtube.com/@NotAFrizik"><button>NotAFrizik YouTube</button></a>
+            <a data-random href="https://www.youtube.com/@TheSashkin"><button>TheSashkin YouTube</button></a>
+            <a data-random href="https://www.youtube.com/@alexmotu_"><button>alexmotu YouTube</button></a>
             <button class="disabled">404TEAM (W.I.P.)</button>
         </div>
     </div>
     <div class="loadingbar"></div>
     <script>
         setTimeout(() => {
-        const links = Array.from(document.querySelectorAll('a[href]'))
-            .map(a => a.href)
-            .filter(href => {
-                const trimmed = href.trim();
-                return trimmed !== '' && 
-                       !trimmed.startsWith('#') && 
-                       !trimmed.startsWith('javascript:');
-            });
+            const pool = Array.from(document.querySelectorAll('a[data-random][href]'))
+                .map(a => a.href.trim())
+                .filter(href => href !== '' && !href.startsWith('#') && !href.startsWith('javascript:'));
 
-        if (links.length > 0) {
-            const randomIndex = Math.floor(Math.random() * links.length);
-            const randomHref = links[randomIndex];
-            window.location.href = randomHref;
-        }
-    }, 10000);
+            if (pool.length > 0) {
+                const target = pool[Math.floor(Math.random() * pool.length)];
+                window.location.href = target;
+            }
+        }, 10000);
     </script>
 </body>
 </html>
